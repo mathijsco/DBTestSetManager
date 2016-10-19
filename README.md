@@ -18,3 +18,8 @@ The data is saved in JSON with formatting, so it's quite easy to merge :)
   * Static value
   * Random from a list
   * C# statement
+
+# Screenshots
+
+Simple screenshot without test content.
+![Screenshot](https://github.com/mathijsco/DBTestSetManager/releases/download/v1.0.0/screenshot.png)
