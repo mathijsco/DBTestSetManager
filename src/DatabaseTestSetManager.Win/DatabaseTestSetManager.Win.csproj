@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9F381E4D-432D-41C3-B027-0ACD81FF9022}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DatabaseTestSetManager.Win</RootNamespace>
+    <AssemblyName>DatabaseTestSetManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationState.cs" />
+    <Compile Include="AssemblyConfig.cs" />
+    <Compile Include="IO\AssemblyConfigRepository.cs" />
+    <Compile Include="IO\InternalContractResolver.cs" />
+    <Compile Include="IO\InternalTypeRemappingSerializationBinder.cs" />
+    <Compile Include="IO\SavedFileRepository.cs" />
+    <Compile Include="UI\CellStyles.cs" />
+    <Compile Include="UI\Controls\CustomBehaviorConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\CustomBehaviorConfiguration.Designer.cs">
+      <DependentUpon>CustomBehaviorConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValueConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValueConfiguration.Designer.cs">
+      <DependentUpon>DefaultValueConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValuePanels\DefaultValueCSharp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValuePanels\DefaultValueCSharp.Designer.cs">
+      <DependentUpon>DefaultValueCSharp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValuePanels\DefaultValueStatic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValuePanels\DefaultValueStatic.Designer.cs">
+      <DependentUpon>DefaultValueStatic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValuePanels\DefaultValueStaticList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValuePanels\DefaultValueStaticList.Designer.cs">
+      <DependentUpon>DefaultValueStaticList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\DefaultValuePanels\IDefaultValuePanel.cs" />
+    <Compile Include="UI\Controls\Modules\ControlModuleExtensions.cs" />
+    <Compile Include="UI\Controls\Modules\IControlModule.cs" />
+    <Compile Include="UI\Controls\Modules\TextBoxModules\SelectAllTextModule.cs" />
+    <Compile Include="UI\Controls\Modules\DataGridModules\ClearContentModule.cs" />
+    <Compile Include="UI\Controls\Modules\DataGridModules\ComboBoxInvalidValueModule.cs" />
+    <Compile Include="UI\Controls\Modules\DataGridModules\CopyPastModule.cs" />
+    <Compile Include="UI\Controls\ExtensibleDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SharedTemplateConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\SharedTemplateConfiguration.Designer.cs">
+      <DependentUpon>SharedTemplateConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TableManagementTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TableManagementTabs.Designer.cs">
+      <DependentUpon>TableManagementTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\RelationConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\RelationConfiguration.Designer.cs">
+      <DependentUpon>RelationConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ContentSetGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ContentSetGrid.Designer.cs">
+      <DependentUpon>ContentSetGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TemplateConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TemplateConfiguration.Designer.cs">
+      <DependentUpon>TemplateConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\Modules\DataGridModules\ReadOnlyStylingModule.cs" />
+    <Compile Include="UI\Elements\ComboBoxElement.cs" />
+    <Compile Include="UI\ColumnProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ColumnProperties.Designer.cs">
+      <DependentUpon>ColumnProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Elements\ComboBoxErrorElement.cs" />
+    <Compile Include="UI\Elements\DataGridViewTypedVariableCell.cs" />
+    <Compile Include="UI\Elements\DataGridViewTypedVariableColumn.cs" />
+    <Compile Include="UI\Elements\EnumComboBoxElement.cs" />
+    <Compile Include="UI\EventArguments\SelectedCellsChangedEventArgs.cs" />
+    <Compile Include="UI\ExportResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ExportResultsForm.Designer.cs">
+      <DependentUpon>ExportResultsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Debugging\TraceToControl.cs" />
+    <Compile Include="UI\Extensions\ConfigToFormExtensions.cs" />
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\RazorLocalParamsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RazorLocalParamsForm.Designer.cs">
+      <DependentUpon>RazorLocalParamsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SharedTemplatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SharedTemplatesForm.Designer.cs">
+      <DependentUpon>SharedTemplatesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TableProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TableProperties.Designer.cs">
+      <DependentUpon>TableProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ManageKeyValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ManageKeyValueForm.Designer.cs">
+      <DependentUpon>ManageKeyValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WhiteboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WhiteboardForm.Designer.cs">
+      <DependentUpon>WhiteboardForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\Controls\CustomBehaviorConfiguration.resx">
+      <DependentUpon>CustomBehaviorConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\DefaultValueConfiguration.resx">
+      <DependentUpon>DefaultValueConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\DefaultValuePanels\DefaultValueCSharp.resx">
+      <DependentUpon>DefaultValueCSharp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\DefaultValuePanels\DefaultValueStatic.resx">
+      <DependentUpon>DefaultValueStatic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\DefaultValuePanels\DefaultValueStaticList.resx">
+      <DependentUpon>DefaultValueStaticList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\SharedTemplateConfiguration.resx">
+      <DependentUpon>SharedTemplateConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\TableManagementTabs.resx">
+      <DependentUpon>TableManagementTabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\RelationConfiguration.resx">
+      <DependentUpon>RelationConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ContentSetGrid.resx">
+      <DependentUpon>ContentSetGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ColumnProperties.resx">
+      <DependentUpon>ColumnProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\TemplateConfiguration.resx">
+      <DependentUpon>TemplateConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExportResultsForm.resx">
+      <DependentUpon>ExportResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\RazorLocalParamsForm.resx">
+      <DependentUpon>RazorLocalParamsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SharedTemplatesForm.resx">
+      <DependentUpon>SharedTemplatesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TableProperties.resx">
+      <DependentUpon>TableProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ManageKeyValueForm.resx">
+      <DependentUpon>ManageKeyValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WhiteboardForm.resx">
+      <DependentUpon>WhiteboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenerateSQL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseTestSetManager.Lib.Razor\DatabaseTestSetManager.Lib.Razor.csproj">
+      <Project>{7d8cb4a0-720e-4b18-97d6-0a8e23d68d97}</Project>
+      <Name>DatabaseTestSetManager.Lib.Razor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DatabaseTestSetManager.Lib\DatabaseTestSetManager.Lib.csproj">
+      <Project>{1055cc9a-3643-43d3-92c9-d147d4d6773b}</Project>
+      <Name>DatabaseTestSetManager.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddColumn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddRow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Method.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GenerateRows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Class.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Namespace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VariablesWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WordWrap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveAs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pbjt.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
